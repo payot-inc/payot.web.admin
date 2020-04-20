@@ -1,7 +1,7 @@
 <template>
   <div class="sales-week">
     <OptionBox/>
-    <DataTable v-bind:data="tableData" :paging="false"/>
+    <DataTable :data="data" />
   </div>
 </template>
 
@@ -18,50 +18,55 @@ export default {
 
   data(){
     return{
-      tableData:{
-        thead:['요일','결제구분','사용건수','매출금액'],
+      data:{
+        thead:[
+          {label:'요일', value:'weekName'},
+          {label:'구분', value:'cate'},
+          {label:'사용건수', value:'useNumber'},
+          {label:'매출금액', value:'price'},
+        ],
         tbody:[
           {
-            data:'월요일',
-            category:'현금',
+            weekName:'월요일',
+            cate:'현금',
             useNumber:354,
-            salesNumber:1344000,
+            price:1344000,
           },
           {
-            data:'화요일',
-            category:'현금',
+            weekName:'화요일',
+            cate:'현금',
             useNumber:384,
-            salesNumber:1248000,
+            price:1248000,
           },
           {
-            data:'수요일',
-            category:'현금',
+            weekName:'수요일',
+            cate:'현금',
             useNumber:384,
-            salesNumber:1248000,
+            price:1248000,
           },
           {
-            data:'목요일',
-            category:'현금',
+            weekName:'목요일',
+            cate:'현금',
             useNumber:354,
-            salesNumber:1344000,
+            price:1344000,
           },
           {
-            data:'금요일',
-            category:'현금',
+            weekName:'금요일',
+            cate:'현금',
             useNumber:384,
-            salesNumber:1248000,
+            price:1248000,
           },
           {
-            data:'토요일',
-            category:'현금',
+            weekName:'토요일',
+            cate:'현금',
             useNumber:384,
-            salesNumber:1248000,
+            price:1248000,
           },
           {
-            data:'일요일',
-            category:'현금',
+            weekName:'일요일',
+            cate:'현금',
             useNumber:384,
-            salesNumber:1248000,
+            price:1248000,
           },
           
         ]

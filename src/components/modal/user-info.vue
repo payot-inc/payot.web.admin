@@ -13,7 +13,7 @@
 
         <OptionBox />
 
-        <DataTable>
+        <DataTable :data="data" paging="true">
           <template slot="data-useButton" slot-scope="{ data }">
             <v-btn outlined @click="$refs.userInfo.open(true)">이용내역 보기</v-btn>
           </template>
@@ -39,12 +39,47 @@ export default {
   },
   data(){
     return{
-      state:true,
+      state:false,
       number:0,
 
       data:{
         thead:[
-          {label:'날짜', value:'date'}
+          {label:'날짜', value:'date'},
+          {label:'충전', value:'charge'},
+          {label:'차감', value:'deduction'},
+          {label:'적립', value:'point'},
+        ],
+        tbody:[
+          {
+            date:'2019-12-24 14:51:12',
+            charge:'10000',
+            deduction:'0',
+            point:'250',
+          },
+          {
+            date:'2019-12-24 14:51:12',
+            charge:'0',
+            deduction:'5000',
+            point:'50'
+          },
+          {
+            date:'2019-12-24 14:51:12',
+            charge:'10000',
+            deduction:'0',
+            point:'250',
+          },
+          {
+            date:'2019-12-24 14:51:12',
+            charge:'0',
+            deduction:'5000',
+            point:'50'
+          },
+          {
+            date:'2019-12-24 14:51:12',
+            charge:'0',
+            deduction:'5000',
+            point:'50'
+          },
         ]
       }
     }
@@ -67,7 +102,7 @@ export default {
     flex-direction: column;
     justify-content: center;
     border-bottom:1px dashed #e2e2e2;
-    padding:0 15px;
+    padding:0 20px;
     height:80px;
     
     h4{
@@ -78,7 +113,7 @@ export default {
   }
 
   .modalCont{
-    padding:15px;
+    padding:20px;
 
     table{
       width:100%;font-size:14px;
@@ -95,7 +130,7 @@ export default {
   } 
 
   .btns{
-    padding:0 15px;
+    padding:0 20px;
     height:60px;
     display:flex;
     align-items: center;

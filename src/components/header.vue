@@ -7,7 +7,7 @@
       </div>
       <div class="gnb">
         <v-btn text>홈페이지</v-btn>
-        <v-btn text>비밀번호 변경</v-btn>
+        <v-btn text @click="$refs.password.open(true)">비밀번호 변경</v-btn>
         <v-btn text>로그아웃</v-btn>
       </div>
     </div>
@@ -23,18 +23,31 @@
       </v-btn>
 
     </div>
+
+    <Password ref="password"/>
   </div>
 </template>
 
 <script>
+
+import Password from '@/components/modal/password.vue';
+
 export default {
+  components:{
+    Password
+  },
   data() {
     return{
       nav:[
         {
+          routeName: 'Home',
+          name: 'home',
+          label:'이번달 매출',
+        },
+        {
           routeName: 'Shop',
           name: 'shop',
-          label:'매장관리',
+          label:'장비관리',
         },
         {
           routeName: 'Kiosk',
@@ -56,10 +69,7 @@ export default {
     this.$emit('route-change', 'shop');
   },
   methods:{
-    navActive(index){
-      this.nav[index].isActive = true;
-    },
-    tabChange(name, label) {
+     tabChange(name, label) {
       this.$emit('route-change', name);
       this.$emit('pageLabel', label);
       this.$router.push({name:name})

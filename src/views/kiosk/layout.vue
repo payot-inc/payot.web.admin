@@ -1,7 +1,9 @@
 <template>
-  <Article>
-    <router-view />
-  </Article>
+  <div id="contents">
+    <Article>
+      <router-view />
+    </Article>
+  </div>
 </template>
 
 <script>

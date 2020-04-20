@@ -2,10 +2,10 @@
   <div id="wrap">
     <Header @route-change="navigation = $event" @pageLabel= "pageLabel = $event" v-if="!['login'].includes($route.name)"/>
     <div id="container">
-      <SideNav :group="navigation" :pageLabel ="pageLabel" v-if="!['home'].includes($route.name)"/>
-      <div id="contents">
-        <slot />
-      </div>
+      <SideNav :group="navigation" :pageLabel ="pageLabel" v-if="!['home','login'].includes($route.name)"/>
+
+      <slot />
+    
     </div>
   </div>
 </template>

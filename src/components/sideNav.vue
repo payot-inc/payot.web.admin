@@ -74,6 +74,17 @@ export default {
               },
             ]
           },
+          {
+            label: '내 정보',
+            name: 'my-info',
+            active: false,
+            child: [
+              {
+                label: '내 정보변경',
+                name: 'shop-info',
+              },
+            ]
+          },
         ],
         kiosk:[
           {
@@ -114,15 +125,19 @@ export default {
               },
               {
                 label: '포인트 지급내역',
-                name: '',
+                name: 'point-plus-list',
               },
               {
                 label: '포인트 차감내역',
-                name: '',
+                name: 'point-minus-list',
               },
               {
                 label: 'SNS마케팅',
-                name: '',
+                name: 'snsMarketing',
+              },
+              {
+                label: 'SNS발송내역',
+                name: 'snsMarketing-list',
               },
             ]
           },
@@ -133,11 +148,11 @@ export default {
             child: [
               {
                 label: '포인트 적립내역',
-                name: '',
+                name: 'point-chage-list',
               },
               {
                 label: '포인트 이용내역',
-                name: '',
+                name: 'point-use-list',
               },
             ]
           },

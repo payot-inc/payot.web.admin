@@ -1,7 +1,7 @@
 <template>
   <div id="acticle">
     <div class="acticleTitle">
-      <h4>페이지-타이틀</h4>
+      <h4>{{$route.name}}</h4>
     </div>
     <div class="acticleCont">
       <div class="section">

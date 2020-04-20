@@ -1,7 +1,7 @@
 <template>
   <div class="member-list">
     <OptionBox/>
-    <DataTable :data="tableData" paging="true">
+    <DataTable :data="data" paging="true">
       <template slot="data-useButton" slot-scope="{ data }">
         <v-btn outlined @click="$refs.userInfo.open(true)">이용내역 보기</v-btn>
       </template>
@@ -24,7 +24,7 @@ export default {
 
   data(){
     return{
-      tableData:{
+      data:{
         thead:[
             { label: '회원번호', value: 'memberNumber' },
             { label: '가입날짜', value: 'date' },

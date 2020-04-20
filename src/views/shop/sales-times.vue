@@ -1,7 +1,9 @@
 <template>
   <div class="sales-times">
     <OptionBox/>
-    <DataTable v-bind:data="tableData" />
+    <DataTable :data="data">
+
+    </DataTable>
   </div>
 </template>
 
@@ -17,20 +19,25 @@ export default {
 
   data(){
     return{
-      tableData:{
-        thead:['날짜','결제구분','사용건수','매출금액'],
+      data:{
+        thead:[
+          {label:'시간', value:'time'},
+          {label:'구분', value:'cate'},
+          {label:'사용건수', value:'useNumber'},
+          {label:'매출금액', value:'price'},
+        ],
         tbody:[
           {
-            data:'01:00',
-            category:'현금',
+            time:'01:00',
+            cate:'현금',
             useNumber:354,
-            salesNumber:1344000,
+            price:1344000,
           },
           {
-            data:'02:00',
-            category:'현금',
+            time:'02:00',
+            cate:'현금',
             useNumber:384,
-            salesNumber:1248000,
+            price:1248000,
           }
         ]
       }

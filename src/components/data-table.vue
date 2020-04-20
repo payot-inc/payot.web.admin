@@ -56,9 +56,9 @@ export default {
   .dataTable{
     .tableTop{
       display:flex;
-      align-items: center;
+      align-items: flex-end;
       justify-content: space-between;
-      margin-bottom:10px;
+      margin-bottom:15px;
 
       h4{
         font-family:'SCDream';font-weight:500;color:#494949;

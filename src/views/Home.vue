@@ -1,4 +1,5 @@
 <template>
+<div id="contents">
   <div class="home">
     <v-row>
       <v-col cols="12" xl="9" lg="9">
@@ -107,15 +108,21 @@
         </div><!-- right -->
       </v-col>
     </v-row>
-  </div> 
+
+    <AlertModal />
+    <MessageModal />
+  </div>
+</div> 
 </template>
 
 <script>
 import Calendar from '@/components/calendar.vue'
-
+import AlertModal from '@/components/modal/alert.vue'
+import MessageModal from '@/components/modal/message.vue';
+ 
 export default {
   components:{
-    Calendar
+    Calendar, AlertModal, MessageModal
   },
   data(){
     return{

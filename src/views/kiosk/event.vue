@@ -27,7 +27,7 @@
           <strong>이벤트 적립률 설정</strong>
           <span>원하는 시간대를 설정하여 추가로 이벤트를 적용할 수 있습니다.</span>
         </div>
-        <v-btn outlined><v-icon>mdi-plus</v-icon>이벤트 추가하기</v-btn>
+        <v-btn outlined @click="$refs.eventAdd.open(true)"><v-icon>mdi-plus</v-icon>이벤트 추가하기</v-btn>
       </div>
   
       <div class="event-list">
@@ -88,16 +88,19 @@
         </v-row>
       </div>
     </div>
+
+    <EventAdd ref="eventAdd"/>
   </div>
 </template>
 
 <script>
 
 import Article from '@/components/articleLayout.vue';
+import EventAdd from '@/components/modal/eventAdd.vue';
 
 export default {
   components:{
-    Article,
+    Article, EventAdd
   },
   data(){
     return{

@@ -2,7 +2,7 @@
  
   <div class="sales-month">
     <OptionBox/>
-    <DataTable v-bind:data="tableData" />
+    <DataTable :data="data" />
   </div>
 
 </template>
@@ -20,32 +20,37 @@ export default {
 
   data(){
     return{
-      tableData:{
-        thead:['날짜','결제구분','사용건수','매출금액'],
+      data:{
+        thead:[
+          {label:'날짜',value:'date'},
+          {label:'구분',value:'cate'},
+          {label:'사용건수',value:'useNumber'},
+          {label:'매출금액',value:'price'},
+        ],
         tbody:[
           {
-            data:'2020년 01월',
-            category:'현금',
+            date:'2020년 01월',
+            cate:'현금',
             useNumber:354,
-            salesNumber:1344000,
+            price:1344000,
           },
           {
-            data:'2020년 02월',
-            category:'현금',
+            date:'2020년 02월',
+            cate:'현금',
             useNumber:384,
-            salesNumber:1248000,
+            price:1248000,
           },
           {
-            data:'2020년 03월',
-            category:'현금',
+            date:'2020년 03월',
+            cate:'현금',
             useNumber:354,
-            salesNumber:1344000,
+            price:1344000,
           },
           {
-            data:'2020년 04월',
-            category:'현금',
+            date:'2020년 04월',
+            cate:'현금',
             useNumber:384,
-            salesNumber:1248000,
+            price:1248000,
           }
         ]
       }
