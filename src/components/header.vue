@@ -49,7 +49,7 @@ export default {
         {
           routeName: 'Shop',
           name: 'shop',
-          label:'장비관리',
+          label:'매장(현금)관리',
           icon:'home-city-outline'
         },
         {

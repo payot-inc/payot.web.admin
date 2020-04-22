@@ -34,7 +34,7 @@ export default {
       params: {
         shop: [
           {
-            label: '장비 매출분석',
+            label: '장비(현금) 매출분석',
             name: 'sales',
             active: true,
             child: [
