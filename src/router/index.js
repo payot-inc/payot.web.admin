@@ -5,12 +5,12 @@ import Home from '../views/home.vue'
 import Login from '../views/login.vue'
 
 import KioskLayout from '../views/kiosk/layout.vue'
+import KioskSalesDay from '../views/kiosk/sales-days.vue'
 import KioskOption from '../views/kiosk/option.vue'
 import KioskProduct from '../views/kiosk/product.vue'
 import KioskControl from '../views/kiosk/control.vue'
 import KioskEvent from '../views/kiosk/event.vue'
 import MemberList from '../views/kiosk/member-list.vue'
-import PointControl from '../views/kiosk/point-control.vue'
 import PointPlusList from '../views/kiosk/point-plus-list.vue'
 import PointMinusList from '../views/kiosk/point-minus-list.vue'
 import snsMarketing from '../views/kiosk/snsMarketing.vue'
@@ -19,6 +19,7 @@ import PointChageList from '../views/kiosk/point-chage-list.vue'
 import PointUseList from '../views/kiosk/point-use-list.vue'
 
 import ShopLayout from '../views/shop/layout.vue'
+import SalesList from '../views/shop/sales-list.vue'
 import SalesDays from '../views/shop/sales-days.vue'
 import SalesTimes from '../views/shop/sales-times.vue'
 import SalesWeek from '../views/shop/sales-week.vue'
@@ -27,6 +28,16 @@ import MachineRemote from '../views/shop/machine-remote.vue'
 import MachineRemoteList from '../views/shop/machine-remote-list.vue'
 import MachineList from '../views/shop/machine-list.vue'
 import ShopInfo from '../views/shop/shop-info.vue'
+
+import PoinLayout from '../views/poin/layout.vue'
+import PoinSales from '../views/poin/sales.vue'
+import PoinSalesDay from '../views/poin/sales-days.vue'
+import PoinCalc from '../views/poin/calc.vue'
+
+import DailyLayout from '../views/daily/layout.vue'
+import DailySales from '../views/daily/sales.vue'
+import DailyCalc from '../views/daily/calc.vue'
+import DailySalesDay from '../views/daily/sales-days.vue'
 
 Vue.use(VueRouter)
 
@@ -50,6 +61,11 @@ Vue.use(VueRouter)
         path: '/shop/salse-days',
         name: 'sales-days',
         component: SalesDays,
+      },
+      {
+        path: '/shop/salse-list',
+        name: 'sales-list',
+        component: SalesList,
       },
       {
         path: '/shop/salse-times',
@@ -95,6 +111,11 @@ Vue.use(VueRouter)
     component: KioskLayout,
     children: [
       {
+        path: '/kiosk/sales-days',
+        name: 'kiosk-sales-days',
+        component: KioskSalesDay,
+      },
+      {
         path: '/kiosk/option',
         name: 'kiosk-option',
         component: KioskOption
@@ -118,11 +139,6 @@ Vue.use(VueRouter)
         path: '/kiosk/member-list',
         name: 'member-list',
         component: MemberList
-      },
-      {
-        path: '/kiosk/point-control',
-        name: 'point-control',
-        component: PointControl
       },
       {
         path: '/kiosk/point-plus-list',
@@ -154,10 +170,52 @@ Vue.use(VueRouter)
         name: 'point-use-list',
         component: PointUseList
       },
-      
-      
     ]
   },
+  {
+    path: '/poin',
+    name: 'poin',
+    component: PoinLayout,
+    children: [
+      {
+        path: '/poin/sales',
+        name: 'poin-sales',
+        component: PoinSales,
+      },
+      {
+        path: '/poin/sales-days',
+        name: 'poin-sales-days',
+        component: PoinSalesDay,
+      },
+      {
+        path: '/poin/calc',
+        name: 'poin-calc',
+        component: PoinCalc,
+      },
+    ]
+  },
+  {
+    path: '/daily',
+    name: 'daily',
+    component: DailyLayout,
+    children: [
+      {
+        path: '/daily/sales',
+        name: 'daily-sales',
+        component: DailySales,
+      },
+      {
+        path: '/daily/sales-days',
+        name: 'daily-sales-days',
+        component: DailySalesDay,
+      },
+      {
+        path: '/daily/calc',
+        name: 'daily-calc',
+        component: DailyCalc,
+      },
+    ]
+  }
   
 ]
 

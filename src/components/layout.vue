@@ -1,8 +1,19 @@
 <template>
   <div id="wrap">
-    <Header @route-change="navigation = $event" @pageLabel= "pageLabel = $event" v-if="!['login'].includes($route.name)"/>
+    <Header 
+      @route-change="navigation = $event" 
+      @pageLabel="pageLabel = $event"  
+      @pageIcon="pageIcon = $event"
+
+      v-if="!['login'].includes($route.name)"
+    />
     <div id="container">
-      <SideNav :group="navigation" :pageLabel ="pageLabel" v-if="!['home','login'].includes($route.name)"/>
+      <SideNav 
+        :group="navigation"
+        :pageLabel="pageLabel" 
+        :pageIcon="pageIcon"
+        v-if="!['home','login'].includes($route.name)"  
+      />
 
       <slot />
     
@@ -21,7 +32,8 @@ export default {
   data() {
     return {
       navigation: 'shop',
-      pageLabel: '매장관리'
+      pageLabel:'장비관리',
+      pageIcon:'home',
     }
   }
   

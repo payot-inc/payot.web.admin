@@ -1,7 +1,7 @@
 <template>
   <div class="custom-calendar">
     <div class="calendar-head">
-      <div class="year-control">
+      <div class="date-control">
         <v-menu
             v-model="menu"
             :close-on-content-click="false"
@@ -28,9 +28,6 @@
         </v-menu>
       </div>
 
-      <div class="total">
-        <slot name="total" />
-      </div>
     </div>
     
     <div class="calendar-view">
@@ -48,6 +45,7 @@
           </dt>
           <slot name="dayCell" :day="day" />
           <slot name="mainCalendarDay" />
+          <slot name="kiosk-sales" />
         </dl>
       </div>
     </div>
@@ -107,6 +105,7 @@ export default {
     align-items: center;
     margin-bottom:20px;
 
+ 
     .v-btn{
       background:#fff;
       border:0px;
@@ -118,24 +117,7 @@ export default {
     }
 
 
-    .total{
-      display:flex;
-
-      span{
-        display:flex;
-        border-radius:5px;
-        justify-content: space-between;
-        align-items: center;
-        border:1px solid #e2e2e2;
-        margin-left:10px;
-        padding:0 10px;
-        height:40px;
-
-        label{font-size:13px;width:100px;}
-        strong{flex:1;}
-      }
-
-    }
+   
 
   }
 

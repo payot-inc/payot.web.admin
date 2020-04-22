@@ -1,5 +1,6 @@
 
 // 뷰티파이 기본
+html{overflow-y:auto;}
 
 .v-application ol, .v-application ul{list-style:none;padding:0px;margin:0px;}
 .v-btn:not(.v-btn--round).v-size--default{width:auto;}
@@ -16,6 +17,7 @@
 #wrap{
   color:#292929;
   height:100%;
+  overflow-y:none;
 }
 #container{
   display:flex;

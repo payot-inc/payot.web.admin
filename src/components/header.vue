@@ -8,17 +8,19 @@
       <div class="gnb">
         <v-btn text>홈페이지</v-btn>
         <v-btn text @click="$refs.password.open(true)">비밀번호 변경</v-btn>
-        <v-btn text>로그아웃</v-btn>
+        <v-btn text @click="$router.push('login')">로그아웃</v-btn>
       </div>
     </div>
 
     <div class="navigation">
 
       <v-btn 
-        v-for="item in nav" text
+        v-for="item in nav"
         :class="{ active: $route.name === item.name }"
         :key="item.toString()"
-        @click="tabChange(item.name, item.label)">
+        @click="tabChange(item.name, item.label, item.icon)"
+        text
+        >
         {{item.label}}
       </v-btn>
 
@@ -42,23 +44,31 @@ export default {
         {
           routeName: 'Home',
           name: 'home',
-          label:'이번달 매출',
+          label:'이번달 전체매출',
         },
         {
           routeName: 'Shop',
           name: 'shop',
           label:'장비관리',
+          icon:'home-city-outline'
         },
         {
           routeName: 'Kiosk',
           name: 'kiosk',
           label:'키오스크',
+          icon:'monitor-dashboard'
         },
         {
+          routeName: 'poin',
+          name: 'poin',
           label:'포인플러스',
+          icon:'plus-box'
         },
         {
+          routeName: 'daily',
+          name: 'daily',
           label:'데일리세탁',
+          icon:'washing-machine'
         },
       ],
       active: true,
@@ -69,9 +79,10 @@ export default {
     this.$emit('route-change', 'shop');
   },
   methods:{
-     tabChange(name, label) {
+     tabChange(name, label, icon) {
       this.$emit('route-change', name);
       this.$emit('pageLabel', label);
+      this.$emit('pageIcon', icon);
       this.$router.push({name:name})
     }
   }

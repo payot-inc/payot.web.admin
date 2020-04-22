@@ -1,7 +1,7 @@
 <template>
   <div id="sideNav">
     <div class="sideTitle">
-      <v-icon>mdi-store</v-icon>
+      <v-icon>mdi-{{pageIcon}}</v-icon>
       <span>{{pageLabel}}</span>
     </div>
 
@@ -27,7 +27,8 @@
 
 <script>
 export default {
-  props: ['group','pageLabel'],
+  props: ['group','pageLabel','pageIcon'],
+  
   data(){
     return{
       params: {
@@ -38,7 +39,11 @@ export default {
             active: true,
             child: [
               {
-                label: '일별 매출현황',
+                label: '실시간 매출내역',
+                name: 'sales-list',
+              },
+              {
+                label: '일자별 매출현황',
                 name: 'sales-days',
               },
               {
@@ -88,6 +93,25 @@ export default {
         ],
         kiosk:[
           {
+            label: '키오스크 이용내역',
+            name: '',
+            active: true,
+            child: [
+              {
+                label: '일자별 이용내역',
+                name: 'kiosk-sales-days',
+              },
+              {
+                label: '포인트 적립내역',
+                name: 'point-chage-list',
+              },
+              {
+                label: '포인트 이용내역',
+                name: 'point-use-list',
+              },
+            ]
+          },
+          {
             label: '키오스크 설정',
             name: '',
             active: true,
@@ -120,10 +144,6 @@ export default {
                 name: 'member-list',
               },
               {
-                label: '포인트 지급/차감',
-                name: 'point-control',
-              },
-              {
                 label: '포인트 지급내역',
                 name: 'point-plus-list',
               },
@@ -132,33 +152,59 @@ export default {
                 name: 'point-minus-list',
               },
               {
-                label: 'SNS마케팅',
+                label: 'SNS 이벤트',
                 name: 'snsMarketing',
               },
               {
-                label: 'SNS발송내역',
+                label: 'SNS 발송내역',
                 name: 'snsMarketing-list',
               },
             ]
           },
+          
+        ],
+        poin:[
           {
-            label: '키오스크 이용내역',
+            label: '매출관리',
             name: '',
             active: true,
             child: [
               {
-                label: '포인트 적립내역',
-                name: 'point-chage-list',
+                label: '실시간 매출내역',
+                name: 'poin-sales',
               },
               {
-                label: '포인트 이용내역',
-                name: 'point-use-list',
+                label: '일자별 매출내역',
+                name: 'poin-sales-days',
+              },
+              {
+                label: '정산내역',
+                name: 'poin-calc',
               },
             ]
           },
         ],
-        poinPlus:[
 
+        daily:[
+          {
+            label: '매출관리',
+            name: '',
+            active: true,
+            child: [
+              {
+                label: '실시간 매출내역',
+                name: 'daily-sales',
+              },
+              {
+                label: '일자별 매출내역',
+                name: 'daily-sales-days',
+              },
+              {
+                label: '정산내역',
+                name: 'daily-calc',
+              },
+            ]
+          },
         ]
       },
     }
@@ -188,7 +234,7 @@ export default {
     height:140px;
 
     .v-icon{font-size:50px;color:#d2d2d2;color:#D93E97}
-    span{font-family:'SCDream';font-size:18px;font-weight:500;}
+    span{font-family:'SCDream';font-size:18px;font-weight:500;margin-top:5px;}
 
   }
 

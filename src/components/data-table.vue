@@ -1,16 +1,22 @@
 <template>
   <div class="dataTable">
+    
     <div class="tableTop">
       <h4>목록 <span>(2)</span></h4>
-      <v-btn outlined>
-        <v-icon>mdi-microsoft-excel</v-icon>
-        <label>엑셀출력</label>
-      </v-btn>
+      <div class="btns">
+        <v-btn outlined class="exel">
+          <v-icon>mdi-microsoft-excel</v-icon>
+          <label>엑셀출력</label>
+        </v-btn>
+      </div>
     </div>
+    
     <table cellpadding="0" cellspacing="0">
       <thead>
         <tr>
-          <th v-for="head in data.thead" :key="head.value">{{ head.label }}</th>
+          <th v-for="head in data.thead" :key="head.value">
+            {{ head.label }}
+          </th>
         </tr>
       </thead>
       <tbody>
@@ -28,6 +34,8 @@
       :length="5"
       ></v-pagination>
     </div>
+
+    
   </div>
 </template>
 
@@ -64,13 +72,21 @@ export default {
         font-family:'SCDream';font-weight:500;color:#494949;
         span{color:#d22828}
       }
+      .btns{
 
-      .v-btn{
-          height:32px;
-          border-radius:5px;
+        .v-btn{
+            height:32px;
+            border-radius:5px;
+            margin-left:10px;
+            .v-icon{font-size:22px;}
+            label{letter-spacing:0px;margin-left:10px;}
+        }
+
+        .v-btn.exel{
           border:1px solid #139B3B;
-          .v-icon{font-size:22px;color:#139B3B}
-          label{letter-spacing: 0px;margin-left:10px;color:#139B3B}
+          .v-icon{color:#139B3B}
+          label{color:#139B3B}
+        }
       }
     }
 
@@ -94,6 +110,7 @@ export default {
         letter-spacing:0px;
         color:#EE2073;
         border:1px solid #EE2073;
+        margin:0 5px;
       }
       
     }

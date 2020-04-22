@@ -11,7 +11,7 @@
           <dt>비밀번호</dt>
           <dd><input type="password"></dd>
         </dl>
-        <v-btn outlined>로그인</v-btn>
+        <v-btn outlined @click="$router.push('/')">로그인</v-btn>
       </div>
       <div class="bottom">
         <v-btn text>홈페이지로 돌아가기</v-btn>
