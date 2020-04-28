@@ -11,7 +11,20 @@
 
       <div class="modalCont">
 
-        <OptionBox />
+        <div class="user-total">
+          <dl>
+            <dt>총 결제금액</dt>
+            <dd>114,000원</dd>
+          </dl>
+          <dl>
+            <dt>총 보너스포인트</dt>
+            <dd>11,400P</dd>
+          </dl>
+          <dl>
+            <dt>총 사용포인트</dt>
+            <dd>56,300P</dd>
+          </dl>
+        </div>
 
         <DataTable :data="data" paging="true">
           <template slot="data-useButton" slot-scope="{ data }">
@@ -115,12 +128,29 @@ export default {
   .modalCont{
     padding:20px;
 
+    .user-total{
+      
+      border:1px solid #e2e2e2;
+      border-top:1px solid #EE2073;
+      display:flex;
+      margin-bottom:30px;
+
+      dl{
+        flex:1;
+        border-right:1px solid #e2e2e2;
+        text-align:center;
+        dt{font-size:13px;font-family:'SCDream';padding:10px;border-bottom:1px dashed #e2e2e2;background:#F6F1F3}
+        dd{font-size:18px;padding:10px;font-family:'SCDream';font-weight:500;}
+      }
+      dl:last-child{border-right:0px;}
+    }
+
     table{
       width:100%;font-size:14px;
       margin-bottom:20px;
       border-top:1px solid #292929;
 
-      th{height:40px;border-bottom:1px solid #EE2073;}
+      th{height:40px;border-bottom:1px solid #EE2073}
       td{height:50px;border-bottom:1px solid #e2e2e2;text-align:center;padding:0 10px;width:25%;}
       td:last-child{font-weight:bold;color:#EE2073}
       td:first-child{border-right:1px solid #e2e2e2;}

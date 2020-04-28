@@ -20,7 +20,7 @@
         :key="item.toString()"
         @click="tabChange(item.name, item.label, item.icon)"
         text
-        >
+      >
         {{item.label}}
       </v-btn>
 
@@ -78,6 +78,7 @@ export default {
   mounted() {
     this.$emit('route-change', 'shop');
   },
+  
   methods:{
      tabChange(name, label, icon) {
       this.$emit('route-change', name);
