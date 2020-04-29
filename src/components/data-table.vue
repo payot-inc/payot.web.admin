@@ -29,9 +29,9 @@
     </table>
     <div class="paging" v-if="paging">
       <v-pagination
-      color="#EE2073"
-      v-model="page"
-      :length="5"
+        color="#EE2073"
+        v-model="page"
+        :length="5"
       ></v-pagination>
     </div>
 

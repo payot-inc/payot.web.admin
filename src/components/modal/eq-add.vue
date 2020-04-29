@@ -3,53 +3,67 @@
     v-model="state"
     width="540px"
   >
-    <div class="pointModal">
+    <div class="eq-add">
       <div class="modalTitle">
-        <h4><span>상품</span>추가</h4>
+        <h4><span>장비</span>등록</h4>
         <p>아래 정보를 입력해주세요</p>
       </div>
 
       <div class="modalCont">
-        
         <dl>
-          <dt>상품명</dt>
-          <dd><input type="text" placeholder="상품명을 입력해주세요"></dd>
-        </dl>
-        <dl>
-          <dt>상품설명</dt>
+          <dt>장비명</dt>
           <dd>
-            <textarea placeholder="상품에 대한 간략한 설명을 입력해주세요"></textarea>
+            <span>
+              <input type="text">
+            </span>
           </dd>
         </dl>
-        <div class="itemInfo">
-          <v-row>
-            <v-col>
-              <dl>
-                <dt>동작시간</dt>
-                <dd>
-                  <input type="text">
-                  <span>분</span>
-                </dd>
-              </dl>
-            </v-col>
-            <v-col>
-              <dl>
-                <dt>상품가격</dt>
-                <dd>
-                  <input type="text">
-                  <span>원</span>
-                </dd>
-              </dl>
-            </v-col>
-          </v-row>
-        </div>      
+        <dl>
+          <dt>장비제조사</dt>
+          <dd>
+            <span>
+              <input type="text">
+            </span>
+          </dd>
+        </dl>
+        <dl>
+          <dt>장비종류</dt>
+          <dd>
+            <span>
+              <input type="text">
+            </span>
+          </dd>
+        </dl>
+        <dl>
+          <dt>용량</dt>
+          <dd>
+            <span>
+              <input type="text">
+            </span>
+          </dd>
+        </dl>
+        <dl>
+          <dt>MAC주소</dt>
+          <dd>
+            <span>
+              <input type="text">
+            </span>
+          </dd>
+        </dl>
+        <dl>
+          <dt>QR코드</dt>
+          <dd>
+            <span>
+              <input type="text">
+            </span>
+          </dd>
+        </dl>
       </div>
-      <v-divider class="mt-5 mb-5"></v-divider>
       <div class="btns">
-        <v-btn outlined @click="productAdd(false)">
+        <v-btn outlined @click="EqAddOpen(false)">
           취소
         </v-btn>
-        <v-btn outlined class="ok" @click="productAdd(false)">
+        <v-btn outlined class="ok" @click="EqAddOpen(false)">
           완료
         </v-btn>
       </div>
@@ -66,7 +80,7 @@ export default {
     }
   },
   methods:{
-    productAdd(value){
+    EqAddOpen(value){
       this.state = value;
     }
   }
@@ -75,22 +89,28 @@ export default {
 
 <style lang="scss" scoped>
 
-.pointModal{
+.eq-add{
   background:#fff;
-  padding:20px;
 
   .modalTitle{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
     border-bottom:1px dashed #e2e2e2;
-    margin-bottom:20px;
+    padding:0 15px;
 
     h4{
       font-size:18px;font-family:'SCDream';font-weight:500;
       span{color:#EE2073;}
     }
-    p{margin-top:5px;font-size:14px;color:#888}
+    p{margin-top:5px;font-size:14px;color:#888;margin-bottom:0px;}
+
+    height:80px;
   }
 
   .modalCont{
+    padding:15px;
+
     dl{
       margin-bottom:15px;
       dt{font-size:14px;margin-bottom:5px;font-family:'SCDream'}
@@ -118,8 +138,9 @@ export default {
 
  
   .btns{
-    margin-top:30px;
     text-align:right;
+    background:#f8f8f8;
+    padding:15px;
 
     .v-btn{
       margin-left:10px;

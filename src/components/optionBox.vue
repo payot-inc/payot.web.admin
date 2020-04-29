@@ -64,7 +64,20 @@
         </dd>
       </dl>
       <dl class="keyword">
-        <dt>키워드</dt>
+        <dt>매장명 검색</dt>
+        <dd>
+          <ul>
+            <li class="textInput">
+                <v-text-field outlined hide-details></v-text-field>
+            </li>
+            <li>
+              <v-btn text>검색</v-btn>
+            </li>
+          </ul>
+        </dd>
+      </dl>
+      <dl class="keyword">
+        <dt>회원번호 검색</dt>
         <dd>
           <ul>
             <li class="textInput">

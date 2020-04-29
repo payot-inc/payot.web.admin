@@ -3,34 +3,28 @@
     v-model="state"
     width="420px"
   >
-    <div class="coinModal">
+    <div class="calc-modal">
       <div class="modalTitle">
-        <h4><span>1번 세탁기</span>를 선택하셨습니다</h4>
-        <p>아래 투입할 금액과 사유를 입력해주세요</p>
+        <h4><span>워시쿱 돈안점</span> 정산하기</h4>
+        <p>아래 실정산금액과 사유를 입력해주세요</p>
       </div>
 
       <div class="priceView">
         <div class="inputBox">
-          <label>금액입력</label>
+          <label>실 정산 금액입력</label>
           <input type="text" placeholder="금액을 입력해주세요" v-model="number">
         </div>
-        <v-btn outlined @click="number += 500">
-          <v-icon>mdi-plus</v-icon>
-        </v-btn>
-        <v-btn outlined @click="number > 0 ? number -= 500 : 0">
-          <v-icon>mdi-minus</v-icon>
-        </v-btn>
       </div>
       
-      <textarea placeholder="원격투입 사유를 입력해주세요">
+      <textarea placeholder="정산 기타사항">
 
       </textarea>
       <div class="btns">
-        <v-btn outlined @click="eqRemoteOpen(false)">
+        <v-btn outlined @click="calcModalOpen(false)">
           취소
         </v-btn>
-        <v-btn outlined class="ok" @click="eqRemoteOpen(false)">
-          투입완료
+        <v-btn outlined class="ok" @click="calcModalOpen(false)">
+          정산완료
         </v-btn>
       </div>
     </div>
@@ -46,7 +40,7 @@ export default {
     }
   },
   methods:{
-    eqRemoteOpen(value){
+    calcModalOpen(value){
       this.state = value;
     }
   }
@@ -55,7 +49,7 @@ export default {
 
 <style lang="scss" scoped>
 
-.coinModal{
+.calc-modal{
   background:#fff;
   padding:20px;
 

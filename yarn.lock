@@ -7912,6 +7912,11 @@ vue-cli-plugin-vuetify@~2.0.5:
     semver "^7.1.2"
     shelljs "^0.8.3"
 
+vue-daum-postcode@^0.8.0:
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/vue-daum-postcode/-/vue-daum-postcode-0.8.0.tgz#9c093fc5668aba662451fe5a4bc0752583a89f21"
+  integrity sha512-ruKrBxgzqNmDKkHyS6uPb26eHmBaNeAG+yN2rRQmVrhqS8mAEg0T1WON7+GxcVFD9B8M/IyGOizlkobYiIBvTA==
+
 vue-hot-reload-api@^2.3.0:
   version "2.3.4"
   resolved "https://registry.npm.taobao.org/vue-hot-reload-api/download/vue-hot-reload-api-2.3.4.tgz#532955cc1eb208a3d990b3a9f9a70574657e08f2"

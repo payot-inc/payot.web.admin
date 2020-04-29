@@ -1,7 +1,7 @@
 
 // 뷰티파이 기본
 html{overflow-y:auto;}
-
+.v-application{font-size:13px;color:#494949;letter-spacing:-0.4px}
 .v-application ol, .v-application ul{list-style:none;padding:0px;margin:0px;}
 .v-btn:not(.v-btn--round).v-size--default{width:auto;}
 .v-text-field--outlined>.v-input__control>.v-input__slot{

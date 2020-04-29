@@ -6,7 +6,6 @@
     <div class="userInfo-modal">
       <div class="modalTitle">
         <h4><span>010-8525-4561 님,</span> 이용내역</h4>
-        <p>아래서 원하시는 메뉴를 선택 후 진행해주세요</p>
       </div>
 
       <div class="modalCont">
@@ -28,13 +27,13 @@
 
         <DataTable :data="data" paging="true">
           <template slot="data-useButton" slot-scope="{ data }">
-            <v-btn outlined @click="$refs.userInfo.open(true)">이용내역 보기</v-btn>
+            <v-btn outlined @click="$refs.userInfo.userInfoModal(true)">이용내역 보기</v-btn>
           </template>
         </DataTable>
       </div>
 
       <div class="btns">
-        <v-btn outlined class="ok" @click="open(false)">
+        <v-btn outlined class="ok" @click="userInfoModal(false)">
           닫기
         </v-btn>
       </div>
@@ -98,7 +97,7 @@ export default {
     }
   },
   methods:{
-    open(value){
+    userInfoModal(value){
       this.state = value;
     }
   }
@@ -116,7 +115,7 @@ export default {
     justify-content: center;
     border-bottom:1px dashed #e2e2e2;
     padding:0 20px;
-    height:80px;
+    height:60px;
     
     h4{
       font-size:18px;font-family:'SCDream';font-weight:500;
